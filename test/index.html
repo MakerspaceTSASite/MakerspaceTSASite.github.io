@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../lib/JQuery.js" integrity="sha256-Z/yIHiT6HJfdwDSS3QRCOEPDc23jZEj3B63hVmvbPi0=" crossorigin="anonymous"></script>
+    <script src="../lib/moment.js"></script>
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../css/evo-calendar.css" />
+    <!-- Optional Themes -->
+    <link rel="stylesheet" href="../css/evo-calendar.midnight-blue.css" />
+    <link rel="stylesheet" href="../css/evo-calendar.orange-coral.css" />
+    <link rel="stylesheet" href="../css/evo-calendar.royal-navy.css" />
+    <!-- JavaScript -->
+    <script src="../lib/evo-calendar.js"></script>
+    <script src="../js/main.js"></script>
+  </head>
+  <div id="topbar1" oncontextmenu="return false;">
+    <menu type="toolbar" id="toolbar1">
+      <button onclick="window.location.href=`${homeUrl}`">Home</button>
+      <button onclick="window.location.href=`${aboutUrl}`">About</button>
+    </menu>
+  </div>
+  <script>
+    $("#topbar1").css({"width":window.innerWidth});
+    $("#toolbar1").css({"width":window.innerWidth});
+    addEventListener("resize", (event) => {
+      $("#topbar").css({"width":window.innerWidth});
+      $("#toolbar").css({"width":window.innerWidth});
+    });
+  </script>
+  <body oncontextmenu="return false;">
+    <main>
+      <style>p {text-align: left;}</style>
+      <p id="date">If you see this, an error occured. Please refresh the page.</p>
+      <script>
+    var currentUrl = "";
+    var homeUrl = "";
+    var time = "";
+    setInterval(function() {
+      currentUrl = window.location.href;
+      aboutUrl = currentUrl.replace("/calendar","/about")
+    }, 100);
+    setInterval(function () {
+      currentUrl = window.location.href;
+      homeUrl = currentUrl.replace("/calendar","/homepage");
+      
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      var today2 = mm + '/' + dd + '/' + yyyy;
+      var currentDate = new Date(); 
+      var hr = String(currentDate.getHours()).padStart(2, '0');
+      var min = String(currentDate.getMinutes()).padStart(2, '0');
+      var sec = String(currentDate.getSeconds()).padStart(2, '0');
+      if(hr > 12) {
+      hr -= 12;
+      }
+      time = hr + ":" + min + ":" + sec;
+      document.getElementById("date").innerText = `Time: ${time}`;
+    }, 1);
+      </script>
+      <style>
+        p {
+          text-align: center;
+        }
+      </style>
+    <h1>Event Dates and Calendar</h1>
+    <h2>Calendar</h2>
+    <h2>Event Dates</h2>
+    <h3>01/26/2024</h3>
+    <p>Grand Opening</p>
+    </main>
+    
+  </body>
+</html>

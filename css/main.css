@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: auto;
+    overflow-x: hidden;
+}
+img {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+h1, h2, h3, h4, h5, h6, p{
+    color: white;
+}
+input {
+    background-color: black;
+    color: white;
+}
+link {
+    color: white;
+}
+a {
+    color: white;
+}
+main {
+    background-color: black;
+    text-align: center;
+}
+button {
+    background-color: black;
+    color: white;
+}
+#topbar, #topbar1{
+background-color: rgb(120, 255, 183);
+align-items: start;
+align-content: start;
+height: 21px;
+position: relative;
+top: -16px;
+left: -8px;
+width: 1366px;
+}
+ul, li{
+    color: white;
+    text-align: left;
+    
+}
+link{
+color: blue;
+}

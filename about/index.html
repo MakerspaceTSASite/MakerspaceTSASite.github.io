@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>About + credits/info</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../lib/JQuery.js" integrity="sha256-Z/yIHiT6HJfdwDSS3QRCOEPDc23jZEj3B63hVmvbPi0=" crossorigin="anonymous"></script>
+    <script src="../lib/moment.js"></script>
+    <script src="../js/main.js"></script>
+  </head>
+  <script>
+    var currentUrl = "filler";
+    var calendarUrl = "filler";
+    setInterval(function() {
+      currentUrl = window.location.href;
+      homeUrl = currentUrl.replace("/about","")
+    }, 100);
+    setInterval(function() {
+      currentUrl = window.location.href;
+      calendarUrl = currentUrl.replace("/about","/calendar")
+    }, 100);
+  </script>
+  <div id="topbar" oncontextmenu="return false;">
+    <menu type="toolbar">
+      <button onclick="window.location.href=`${homeUrl}`">Home</button>
+      <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
+    </menu>
+  </div>
+  <script>
+    $("#topbar").css({"width":window.innerWidth});
+    $("#toolbar").css({"width":window.innerWidth});
+    addEventListener("resize", (event) => {
+      $("#topbar").css({"width":window.innerWidth});
+      $("#toolbar").css({"width":window.innerWidth});
+    });
+  </script>
+  <body oncontextmenu="return false;">
+    <main>
+    <h1>About</h1>
+     <a href="https://www.jqueryscript.net/time-clock/event-calendar-evo.html">Calendar (evo-calendar) from here</a>
+     <br>
+     <a href="https://jquery.com/">JQuery</a>
+     <br>
+     <a href="https://momentjs.com/">Moment.js (Calendar dependency)</a>
+    </main>
+  </body>
+</html>
