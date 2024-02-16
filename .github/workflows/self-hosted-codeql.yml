@@ -10,7 +10,6 @@
 # supported CodeQL languages.
 #
 name: "self-hosted-CodeQL"
-runs-on: [self-hosted, Linux, X64]
 on:
   push:
     branches: [ "main" ]
@@ -27,7 +26,7 @@ jobs:
     #   - https://gh.io/supported-runners-and-hardware-resources
     #   - https://gh.io/using-larger-runners
     # Consider using larger runners for possible analysis time improvements.
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    runs-on: [self-hosted, Linux, X64]
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
       # required for all workflows
