@@ -10,7 +10,7 @@
 # supported CodeQL languages.
 #
 name: "self-hosted-CodeQL"
-runs-on: self-hosted
+runs-on: [self-hosted, Linux, X64]
 on:
   push:
     branches: [ "main" ]
