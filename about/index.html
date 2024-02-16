@@ -20,18 +20,20 @@
       calendarUrl = currentUrl.replace("/about","/calendar")
     }, 100);
   </script>
-  <div id="topbar" oncontextmenu="return false;">
-    <menu type="toolbar">
+  <div id="topbar2" oncontextmenu="return false;">
+    <menu type="toolbar2">
       <button onclick="window.location.href=`${homeUrl}`">Home</button>
       <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
     </menu>
   </div>
   <script>
-    $("#topbar").css({"width":window.innerWidth});
-    $("#toolbar").css({"width":window.innerWidth});
+    $("#topbar2").css({"width":window.innerWidth});
+    $("#toolbar2").css({"width":window.innerWidth});
+    $(document.body).css({"width":window.innerWidth});
     addEventListener("resize", (event) => {
-      $("#topbar").css({"width":window.innerWidth});
-      $("#toolbar").css({"width":window.innerWidth});
+      $("#topbar2").css({"width":window.innerWidth});
+      $("#toolbar2").css({"width":window.innerWidth});
+      $(document.body).css({"width":window.innerWidth});
     });
   </script>
   <body oncontextmenu="return false;">

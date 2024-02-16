@@ -25,9 +25,11 @@
   <script>
     $("#topbar1").css({"width":window.innerWidth});
     $("#toolbar1").css({"width":window.innerWidth});
+    $(document.body).css({"width":window.innerWidth});
     addEventListener("resize", (event) => {
-      $("#topbar").css({"width":window.innerWidth});
-      $("#toolbar").css({"width":window.innerWidth});
+      $("#topbar1").css({"width":window.innerWidth});
+      $("#toolbar1").css({"width":window.innerWidth});
+      $(document.body).css({"width":window.innerWidth});
     });
   </script>
   <body oncontextmenu="return false;">

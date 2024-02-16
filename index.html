@@ -22,17 +22,18 @@
   </script>
   <div id="topbar" oncontextmenu="return false;">
     <menu type="toolbar">
-      <button id="test" onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
+      <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
       <button onclick="window.location.href=`${aboutUrl}`">About</button>
     </menu>
   </div>
   <script>
-    console.log(document.getElementById("test").style.width);
     $("#topbar").css({"width":window.innerWidth});
     $("#toolbar").css({"width":window.innerWidth});
+    $(document.body).css({"width":window.innerWidth});
     addEventListener("resize", (event) => {
       $("#topbar").css({"width":window.innerWidth});
       $("#toolbar").css({"width":window.innerWidth});
+      $(document.body).css({"width":window.innerWidth});
     });
   </script>
   <body oncontextmenu="return false;">
