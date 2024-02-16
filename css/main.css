@@ -6,8 +6,9 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    width: auto;
+    width: 1366px;
     overflow-x: hidden;
+    text-align: center;
 }
 img {
     user-select: none;
@@ -20,6 +21,7 @@ img {
 }
 h1, h2, h3, h4, h5, h6, p{
     color: white;
+    text-align: center;
 }
 input {
     background-color: black;
@@ -38,16 +40,9 @@ main {
 button {
     background-color: black;
     color: white;
-}
-#topbar, #topbar1{
-background-color: rgb(120, 255, 183);
-align-items: start;
-align-content: start;
-height: 21px;
-position: relative;
-top: -16px;
-left: -8px;
-width: 1366px;
+    height: 5vh;
+    min-height: 21px;
+    max-height: 50px;
 }
 ul, li{
     color: white;
@@ -56,4 +51,16 @@ ul, li{
 }
 link{
 color: blue;
+}
+#topbar, #topbar1{
+background-color: rgb(120, 255, 183);
+align-items: start;
+align-content: start;
+position: relative;
+top: -16px;
+left: -8px;
+width: 1366px;
+height: 5vh;
+min-height: 21px;
+max-height: 50px;
 }

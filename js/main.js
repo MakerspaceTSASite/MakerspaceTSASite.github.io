@@ -22,9 +22,7 @@ function averageOf(data,data2) {
         return avg;
     }
 }
-addEventListener("resize", (event) => {
-console.log(window.innerWidth);
-});
+
 $('img').mousedown(function (e) {
   if(e.button == 2) { // right click
     return false; // do nothing!
