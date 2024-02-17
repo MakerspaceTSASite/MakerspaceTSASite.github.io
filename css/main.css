@@ -52,7 +52,7 @@ ul, li{
 link{
 color: blue;
 }
-#topbar, #topbar1 #topbar2, #topbar3{
+#topbar, #topbar1, #topbar2, #topbar3{
 background-color: rgb(120, 255, 183);
 align-items: start;
 align-content: start;
