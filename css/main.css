@@ -59,27 +59,15 @@ li {
 link{
 color: blue;
 }
-#topbar {
-  overflow: hidden; /* Prevents content from overflowing the topbar */
-    background-color: rgb(0, 255, 183);
-    align-items: start;
-    align-content: start;
-    position: relative;
-    top: -16px;
-    left: -8px;
-    width: 1366px;
-    height: 5vh;
-    min-height: 21px;
-    max-height: 50px;
-}
-
-#topbar button {
-  white-space: nowrap; /* Prevents the button text from wrapping to the next line */
-}
-
-@media (max-width:   600px) {
-  #topbar button {
-    display: block; /* Stacks the buttons vertically */
-    width:   100%; /* Full width of the topbar */
-  }
+#topbar{
+background-color: rgb(0, 255, 183);
+align-items: start;
+align-content: start;
+position: relative;
+top: -16px;
+left: -8px;
+width: 1366px;
+height: 5vh;
+min-height: 21px;
+max-height: 50px;
 }
