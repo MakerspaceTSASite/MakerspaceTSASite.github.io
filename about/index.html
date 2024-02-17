@@ -26,7 +26,7 @@
       equipmentUrl = currentUrl.replace("/about","/equipment-and-services")
     }, 100);
   </script>
-  <div id="topbar2" oncontextmenu="return false;">
+  <div id="topbar" oncontextmenu="return false;">
     <menu type="toolbar">
       <button onclick="window.location.href=`${homeUrl}`">Home</button>
       <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
@@ -34,10 +34,10 @@
     </menu>
   </div>
   <script>
-    $("#topbar2").css({"width":window.innerWidth});
+    $("#topbar").css({"width":window.innerWidth});
     $(document.body).css({"width":window.innerWidth});
     addEventListener("resize", (event) => {
-      $("#topbar2").css({"width":window.innerWidth});
+      $("#topbar").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
     });
   </script>

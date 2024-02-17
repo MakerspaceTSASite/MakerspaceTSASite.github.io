@@ -16,7 +16,7 @@
     <script src="../lib/evo-calendar.js"></script>
     <script src="../js/main.js"></script>
   </head>
-  <div id="topbar1" oncontextmenu="return false;">
+  <div id="topbar" oncontextmenu="return false;">
     <menu type="toolbar">
       <button onclick="window.location.href=`${homeUrl}`">Home</button>
       <button onclick="window.location.href=`${aboutUrl}`">About</button>
@@ -24,10 +24,10 @@
     </menu>
   </div>
   <script>
-    $("#topbar1").css({"width":window.innerWidth});
+    $("#topbar").css({"width":window.innerWidth});
     $(document.body).css({"width":window.innerWidth});
     addEventListener("resize", (event) => {
-      $("#topbar1").css({"width":window.innerWidth});
+      $("#topbar").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
     });
   </script>
