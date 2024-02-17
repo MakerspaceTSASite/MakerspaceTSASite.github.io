@@ -11,6 +11,8 @@
   <script>
     var currentUrl = "filler";
     var calendarUrl = "filler";
+    var equipmentUrl = "filler";
+    var homeUrl = "filler";
     setInterval(function() {
       currentUrl = window.location.href;
       homeUrl = currentUrl.replace("/about","")
@@ -19,20 +21,23 @@
       currentUrl = window.location.href;
       calendarUrl = currentUrl.replace("/about","/calendar")
     }, 100);
+    setInterval(function() {
+      currentUrl = window.location.href;
+      equipmentUrl = currentUrl.replace("/about","/equipment-and-services")
+    }, 100);
   </script>
   <div id="topbar2" oncontextmenu="return false;">
-    <menu type="toolbar2">
+    <menu type="toolbar">
       <button onclick="window.location.href=`${homeUrl}`">Home</button>
       <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
+      <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
     </menu>
   </div>
   <script>
     $("#topbar2").css({"width":window.innerWidth});
-    $("#toolbar2").css({"width":window.innerWidth});
     $(document.body).css({"width":window.innerWidth});
     addEventListener("resize", (event) => {
       $("#topbar2").css({"width":window.innerWidth});
-      $("#toolbar2").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
     });
   </script>

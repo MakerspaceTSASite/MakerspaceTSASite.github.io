@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Makerspace</title>
+    <title>Equipment and Services</title>
     <link rel="stylesheet" href="../css/main.css">
     <script src="../lib/JQuery.js" integrity="sha256-MnSZeU4f1L1WsaWOLCP4OAPr2/7ewy0colwYY7T4c9o=" crossorigin="anonymous"></script>
     <script src="../lib/moment.js"></script>
@@ -11,31 +11,33 @@
   <script>
     var currentUrl = "filler";
     var calendarUrl = "filler";
+    var homeUrl = "filler";
+    var aboutUrl = "filler;"
     setInterval(function() {
       currentUrl = window.location.href;
-      calendarUrl = currentUrl + "calendar";
+      calendarUrl = currentUrl.replace("/equipment-and-services", "/calendar")
     }, 100);
     setInterval(function() {
       currentUrl = window.location.href;
-      aboutUrl = currentUrl + "about";
+      aboutUrl = currentUrl.replace("/equipment-and-services", "/about")
     }, 100);
     setInterval(function() {
       currentUrl = window.location.href;
-      equipmentUrl = currentUrl + "equipment-and-services";
+      homeUrl = currentUrl.replace("/equipment-and-services", "")
     }, 100);
   </script>
-  <div id="topbar" oncontextmenu="return false;">
+  <div id="topbar3" oncontextmenu="return false;">
     <menu type="toolbar">
       <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
       <button onclick="window.location.href=`${aboutUrl}`">About</button>
-      <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
+      <button onclick="window.location.href=`${homeUrl}`">Home</button>
     </menu>
   </div>
   <script>
-    $("#topbar").css({"width":window.innerWidth});
+    $("#topbar3").css({"width":window.innerWidth});
     $(document.body).css({"width":window.innerWidth});
     addEventListener("resize", (event) => {
-      $("#topbar").css({"width":window.innerWidth});
+      $("#topbar3").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
     });
   </script>

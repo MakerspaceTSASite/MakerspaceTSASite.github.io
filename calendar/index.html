@@ -17,18 +17,17 @@
     <script src="../js/main.js"></script>
   </head>
   <div id="topbar1" oncontextmenu="return false;">
-    <menu type="toolbar" id="toolbar1">
+    <menu type="toolbar">
       <button onclick="window.location.href=`${homeUrl}`">Home</button>
       <button onclick="window.location.href=`${aboutUrl}`">About</button>
+      <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
     </menu>
   </div>
   <script>
     $("#topbar1").css({"width":window.innerWidth});
-    $("#toolbar1").css({"width":window.innerWidth});
     $(document.body).css({"width":window.innerWidth});
     addEventListener("resize", (event) => {
       $("#topbar1").css({"width":window.innerWidth});
-      $("#toolbar1").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
     });
   </script>
@@ -40,9 +39,15 @@
     var currentUrl = "";
     var homeUrl = "";
     var time = "";
+    var aboutUrl = "";
+    var equipmentUrl = "";
     setInterval(function() {
       currentUrl = window.location.href;
       aboutUrl = currentUrl.replace("/calendar","/about")
+    }, 100);
+    setInterval(function() {
+      currentUrl = window.location.href;
+      equipmentUrl = currentUrl.replace("/calendar","/equipment-and-services")
     }, 100);
     setInterval(function () {
       currentUrl = window.location.href;
