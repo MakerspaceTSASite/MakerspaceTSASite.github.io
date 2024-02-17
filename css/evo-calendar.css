@@ -318,7 +318,7 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 .event-list > .event-empty {
     padding: 15px 10px;
-    background-color: rgba(135,115,193,.15);
+    background-color: rgba(63, 255, 201, 0.15);
     border: 1px solid #000;
 }
 .event-list > .event-empty > p {
@@ -493,7 +493,7 @@ button.icon-button > span.bars::after {
     width: 100%;
     height: 4px;
     display: block;
-    background-color: #000;
+    background-color: #fff;
 }
 button.icon-button > span.bars::before {
     top: -8px;
