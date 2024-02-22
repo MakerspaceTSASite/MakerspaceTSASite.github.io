@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Equipment and Services</title>
     <link rel="stylesheet" href="../css/main.css">
     <script src="../lib/JQuery.js" integrity="sha256-MnSZeU4f1L1WsaWOLCP4OAPr2/7ewy0colwYY7T4c9o=" crossorigin="anonymous"></script>
     <script src="../lib/moment.js"></script>
     <script src="../js/main.js"></script>
   </head>
-  <script>
-    var currentUrl = "";
-    var calendarUrl = "";
-    var homeUrl = "";
-    var aboutUrl = ";"
-    setInterval(function() {
-      currentUrl = window.location.href;
-      calendarUrl = currentUrl.replace("/equipment-and-services", "/calendar")
-    }, 100);
-    setInterval(function() {
-      currentUrl = window.location.href;
-      aboutUrl = currentUrl.replace("/equipment-and-services", "/about")
-    }, 100);
-    setInterval(function() {
-      currentUrl = window.location.href;
-      homeUrl = currentUrl.replace("/equipment-and-services", "")
-    }, 100);
-  </script>
-  <div id="topbar" oncontextmenu="return false;">
-    <menu type="toolbar">
-      <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
-      <button onclick="window.location.href=`${aboutUrl}`">About</button>
-      <button onclick="window.location.href=`${homeUrl}`">Home</button>
-    </menu>
-  </div>
-  <script>
-    $("#topbar").css({"width":window.innerWidth});
-    $(document.body).css({"width":window.innerWidth});
-    addEventListener("resize", (event) => {
+  <body oncontextmenu="return false;">
+    <div id="topbar" oncontextmenu="return false;">
+      <menu type="toolbar">
+        <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
+        <button onclick="window.location.href=`${aboutUrl}`">About</button>
+        <button onclick="window.location.href=`${homeUrl}`">Home</button>
+      </menu>
+    </div>
+    <main>
+      <h1>Equipment and services we supply</h1>
+      <h2>Equipment</h2>
+      <ul>
+        <li>3D Printers</li>
+      </ul>
+      <div id="reserve">
+        <a href="mailto:filler@example.com?subject=Reserve%20Equipment%20or%20Space&body=I%20would%20like%20to%20reserve%20___%20from%20___%20until%20__.">Send Email</a>
+      </div>
+    </main>
+    <script>
+      var currentUrl = "";
+      var calendarUrl = "";
+      var homeUrl = "";
+      var aboutUrl = "";
+      setInterval(function() {
+        currentUrl = window.location.href;
+        calendarUrl = currentUrl.replace("/equipment-and-services", "/calendar");
+        aboutUrl = currentUrl.replace("/equipment-and-services", "/about");
+        homeUrl = currentUrl.replace("/equipment-and-services", "");
+      }, 100);
       $("#topbar").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
-    });
-  </script>
-  <body oncontextmenu="return false;">
-    <main>
-    <h1>Equipment and services we supply</h1>
-    <h2>Equipment</h2>
-    <ul>
-      <li>3D Printers</li>
-    </ul>
-    <div id="reserve">
-      <a href="mailto:filler@example.com?subject=Reserve%20Equipment%20or%20Space&body=I%20would%20like%20to%20reserve%20___%20from%20___%20until%20___.">Send Email</a>
-    </div>
-    </main>
+      addEventListener("resize", function() {
+        $("#topbar").css({"width":window.innerWidth});
+        $(document.body).css({"width":window.innerWidth});
+      });
+    </script>
   </body>
 </html>

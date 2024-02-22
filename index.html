@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Makerspace</title>
     <link rel="stylesheet" href="../css/main.css">
     <script src="../lib/JQuery.js" integrity="sha256-MnSZeU4f1L1WsaWOLCP4OAPr2/7ewy0colwYY7T4c9o=" crossorigin="anonymous"></script>
     <script src="../lib/moment.js"></script>
     <script src="../js/main.js"></script>
   </head>
-  <script>
-    var currentUrl = "";
-    var calendarUrl = "";
-    setInterval(function() {
-      currentUrl = window.location.href;
-      calendarUrl = currentUrl + "calendar";
-    }, 100);
-    setInterval(function() {
-      currentUrl = window.location.href;
-      aboutUrl = currentUrl + "about";
-    }, 100);
-    setInterval(function() {
-      currentUrl = window.location.href;
-      equipmentUrl = currentUrl + "equipment-and-services";
-    }, 100);
-  </script>
-  <div id="topbar" oncontextmenu="return false;">
-    <menu type="toolbar">
-      <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
-      <button onclick="window.location.href=`${aboutUrl}`">About</button>
-      <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
-    </menu>
-  </div>
-  <script>
-    $("#topbar").css({"width":window.innerWidth});
-    $(document.body).css({"width":window.innerWidth});
-    addEventListener("resize", (event) => {
+  <body oncontextmenu="return false;">
+    <div id="topbar" oncontextmenu="return false;">
+      <menu type="toolbar">
+        <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
+        <button onclick="window.location.href=`${aboutUrl}`">About</button>
+        <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
+      </menu>
+    </div>
+    <main>
+      <h1>Home Page</h1>
+    </main>
+    <script>
+      var currentUrl = "";
+      var calendarUrl = "";
+      var aboutUrl = "";
+      var equipmentUrl = "";
+      setInterval(function() {
+        currentUrl = window.location.href;
+        calendarUrl = currentUrl + "calendar";
+        aboutUrl = currentUrl + "about";
+        equipmentUrl = currentUrl + "equipment-and-services";
+      }, 100);
+
       $("#topbar").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
-    });
-  </script>
-  <body oncontextmenu="return false;">
-    <main>
-    <h1>Home Page</h1>
-    </main>
+      addEventListener("resize", (event) => {
+        $("#topbar").css({"width":window.innerWidth});
+        $(document.body).css({"width":window.innerWidth});
+      });
+    </script>
   </body>
 </html>
