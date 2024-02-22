@@ -60,10 +60,11 @@
       time = hr + ":" + min + ":" + sec;
       document.getElementById("date").innerText = `Time: ${time}`;
     }, 1);
-    $.ajax({
-  url: currentUrl.replace("/test", "") + "/js/Utils.js",
-  dataType: "script",
-  success: success
+    $.getScript( "utils.js", function( data, textStatus, jqxhr ) {
+  console.log( data ); // Data returned
+  console.log( textStatus ); // Success
+  console.log( jqxhr.status ); // 200
+  console.log( "Load was performed." );
 });
       </script>
     <h1>Event Dates and Calendar</h1>
