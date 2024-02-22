@@ -60,14 +60,19 @@
       time = hr + ":" + min + ":" + sec;
       document.getElementById("date").innerText = `Time: ${time}`;
     }, 1);
-    var url = currentUrl.replace("/test","/js/utils.js")
-    $.getScript(url)
-    .done(function( script, textStatus ) {
-    console.log( textStatus );
-  })
-  .fail(function( jqxhr, settings, exception ) {
-   console.log("Triggered ajaxError handler.");
-  });
+    addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+      var url = currentUrl.replace("/test","/js/utils.js")
+      $.getScript(url)
+      .done(function( script, textStatus ) {
+      console.log( textStatus );
+      })
+    .fail(function( jqxhr, settings, exception ) {
+    console.log("Triggered ajaxError handler.");
+    });
+    }, 3000);
+      });
+    
       </script>
     <h1>Event Dates and Calendar</h1>
     <h2>Calendar</h2>
