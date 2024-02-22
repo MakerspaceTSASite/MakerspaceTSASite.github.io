@@ -1,169 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calendar</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/evo-calendar.css">
+    <link rel="stylesheet" href="../css/evo-calendar.midnight-blue.css">
+    <link rel="stylesheet" href="../css/evo-calendar.orange-coral.css">
+    <link rel="stylesheet" href="../css/evo-calendar.royal-navy.css">
     <script src="../lib/JQuery.js" integrity="sha256-MnSZeU4f1L1WsaWOLCP4OAPr2/7ewy0colwYY7T4c9o=" crossorigin="anonymous"></script>
     <script src="../lib/moment.js"></script>
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="../css/evo-calendar.css" />
-    <!-- Optional Themes -->
-    <link rel="stylesheet" href="../css/evo-calendar.midnight-blue.css" />
-    <link rel="stylesheet" href="../css/evo-calendar.orange-coral.css" />
-    <link rel="stylesheet" href="../css/evo-calendar.royal-navy.css" />
-    <!-- JavaScript -->
     <script src="../lib/evo-calendar.js"></script>
     <script src="../js/main.js"></script>
   </head>
-  <div id="topbar" oncontextmenu="return false;">
-    <menu type="toolbar">
-      <button onclick="window.location.href=`${homeUrl}`">Home</button>
-      <button onclick="window.location.href=`${aboutUrl}`">About</button>
-      <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
-    </menu>
-  </div>
-  <script>
-    $("#topbar").css({"width":window.innerWidth});
-    $(document.body).css({"width":window.innerWidth});
-    addEventListener("resize", (event) => {
+  <body oncontextmenu="return false;">
+    <div id="topbar" oncontextmenu="return false;">
+      <menu type="toolbar">
+        <button onclick="window.location.href=`${homeUrl}`">Home</button>
+        <button onclick="window.location.href=`${aboutUrl}`">About</button>
+        <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
+      </menu>
+    </div>
+    <script>
       $("#topbar").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
-    });
-  </script>
-  <body oncontextmenu="return false;">
+      addEventListener("resize", (event) => {
+        $("#topbar").css({"width":window.innerWidth});
+        $(document.body).css({"width":window.innerWidth});
+      });
+    </script>
     <main>
-      <style>p {text-align: left;}</style>
       <p id="date">If you see this, an error occured. Please refresh the page.</p>
       <script>
-    var currentUrl = "";
-    var homeUrl = "";
-    var time = "";
-    var aboutUrl = "";
-    var equipmentUrl = "";
-    setInterval(function() {
-      currentUrl = window.location.href;
-      aboutUrl = currentUrl.replace("/calendar","/about")
-    }, 100);
-    setInterval(function() {
-      currentUrl = window.location.href;
-      equipmentUrl = currentUrl.replace("/calendar","/equipment-and-services")
-    }, 100);
-    setInterval(function () {
-      currentUrl = window.location.href;
-      homeUrl = currentUrl.replace("/calendar","");
-      
-      var today = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
-      var yyyy = today.getFullYear();
-      var today2 = mm + '/' + dd + '/' + yyyy;
-      var currentDate = new Date(); 
-      var hr = String(currentDate.getHours()).padStart(2, '0');
-      var min = String(currentDate.getMinutes()).padStart(2, '0');
-      var sec = String(currentDate.getSeconds()).padStart(2, '0');
-      if(hr > 12) {
-      hr -= 12;
-      }
-      time = hr + ":" + min + ":" + sec;
-      document.getElementById("date").innerText = `Time: ${time}`;
-    }, 1);
+        var currentUrl = "";
+        var homeUrl = "";
+        var time = "";
+        var aboutUrl = "";
+        var equipmentUrl = "";
+        setInterval(function() {
+          currentUrl = window.location.href;
+          aboutUrl = currentUrl.replace("/calendar","/about")
+        }, 100);
+        setInterval(function() {
+          currentUrl = window.location.href;
+          equipmentUrl = currentUrl.replace("/calendar","/equipment-and-services")
+        }, 100);
+        setInterval(function () {
+          currentUrl = window.location.href;
+          homeUrl = currentUrl.replace("/calendar","");
+
+          var today = new Date();
+          var dd = String(today.getDate()).padStart(2, '0');
+          var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
+          var yyyy = today.getFullYear();
+          var today2 = mm + '/' + dd + '/' + yyyy;
+          var currentDate = new Date();
+          var hr = String(currentDate.getHours()).padStart(2, '0');
+          var min = String(currentDate.getMinutes()).padStart(2, '0');
+          var sec = String(currentDate.getSeconds()).padStart(2, '0');
+          if(hr > 12) {
+          hr -= 12;
+          }
+          time = hr + ":" + min + ":" + sec;
+          document.getElementById("date").innerText = `Time: ${time}`;
+        }, 1);
       </script>
-      <style>
-        p {
-          text-align: center;
-        }
-      </style>
-    <h1>Event Dates and Calendar</h1>
-    <h2>Calendar</h2>
-    <div id="evoCalendar"></div>
-    <script>
-        myEvents = [
-  { 
-    id: "test-event-1",
-    name: "Test", 
-    date: "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)", 
-    type: "event", 
-    everyYear: true,
-    description: "Test"
-  }
-  // more events here
-]
-$('#evoCalendar').evoCalendar({
-  calendarEvents: myEvents
-});
-$('#evoCalendar').evoCalendar({
-  format: 'mm/dd/yyyy',
-  titleFormat: 'MM yyyy',
-  eventHeaderFormat: 'MM d, yyyy'
-});
-$('#evoCalendar').evoCalendar({
-  language: 'en'
-});
-$('#evoCalendar').evoCalendar({
-  todayHighlight: false
-});
-$('#evoCalendar').evoCalendar({
-  sidebarToggler: true,
-  sidebarDisplayDefault: true,
-  eventListToggler: true,
-  eventDisplayDefault: true,
-});
-/* $("#evoCalendar").evoCalendar('addCalendarEvent', [
-  {
-   name: "NEW EVENT",
-   date: "February/16/2020",
-   type: "birthday",
-   everyYear: true
-  }
-]);
-*/
-$('#evoCalendar').evoCalendar({
-  theme:'Orange Coral'
-});
-/*
-// set theme
-$("#evoCalendar").evoCalendar('setTheme', themeName);
+      <h1>Event Dates and Calendar</h1>
+      <h2>Calendar</h2>
+      <div id="evoCalendar"></div>
+      <script>
+        var myEvents = [
+          {
+            id: "test-event-1",
+            name: "Test",
+            date: "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
+            type: "event",
+            everyYear: true,
+            description: "Test"
+          }
+          // more events here
+        ];
+        $('#evoCalendar').evoCalendar({
+          calendarEvents: myEvents,
+          format: 'mm/dd/yyyy',
+          titleFormat: 'MM yyyy',
+          eventHeaderFormat: 'MM d, yyyy',
+          language: 'en',
+          todayHighlight: false,
+          sidebarToggler: true,
+          sidebarDisplayDefault: true,
+          eventListToggler: true,
+          eventDisplayDefault: true,
+          theme: 'Orange Coral'
+        });
+        /*
+        // set theme
+        $("#evoCalendar").evoCalendar('setTheme', themeName);
 
-// toggle sidebar
-$("#evoCalendar").evoCalendar('toggleSidebar', true/false);
+        // toggle sidebar
+        $("#evoCalendar").evoCalendar('toggleSidebar', true/false);
 
-// toggle event list
-$("#evoCalendar").evoCalendar('toggleEventList', true/false);
+        // toggle event list
+        $("#evoCalendar").evoCalendar('toggleEventList', true/false);
 
-// get the selected date
-$("#evoCalendar").evoCalendar('getActiveDate');
+        // get the selected date
+        $("#evoCalendar").evoCalendar('getActiveDate');
 
-// get active events
-$("#evoCalendar").evoCalendar('getActiveEvents');
+        // get active events
+        $("#evoCalendar").evoCalendar('getActiveEvents');
 
-// select a year
-$("#evoCalendar").evoCalendar('selectYear', yearNumber);
+        // select a year
+        $("#evoCalendar").evoCalendar('selectYear', yearNumber);
 
-// select a month
-$("#evoCalendar").evoCalendar('selectMonth', monthNumber);
+        // select a month
+        $("#evoCalendar").evoCalendar('selectMonth', monthNumber);
 
-// select a date
-$("#evoCalendar").evoCalendar('selectDate', dateNumber);
+        // select a date
+        $("#evoCalendar").evoCalendar('selectDate', dateNumber);
 
-// add events
-$("#evoCalendar").evoCalendar('addCalendarEvent', [{
-  id: 'Event ID',
-  name: "Event Name",
-  date: "Date Here",
-  type: "Event Type",
-  everyYear: true
-}]);
+        // add events
+        $("#evoCalendar").evoCalendar('addCalendarEvent', [{
+          id: 'Event ID',
+          name: "Event Name",
+          date: "Date Here",
+          type: "Event Type",
+          everyYear: true
+        }]);
 
-// remove events by ID
-$("#evoCalendar").evoCalendar('removeCalendarEvent', eventID);
+        // remove events by ID
+        $("#evoCalendar").evoCalendar('removeCalendarEvent', eventID);
 
-// destroy the calendar
-$("#evoCalendar").evoCalendar('destroy');
-*/
-    </script>
+        // destroy the calendar
+        $("#evoCalendar").evoCalendar('destroy');
+        */
+      </script>
     </main>
-    
   </body>
 </html>

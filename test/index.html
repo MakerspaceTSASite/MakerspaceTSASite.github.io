@@ -32,7 +32,6 @@
   </script>
   <body oncontextmenu="return false;">
     <main>
-      <style>p {text-align: left;}</style>
       <p id="date">If you see this, an error occured. Please refresh the page.</p>
       <script>
     var currentUrl = "";
@@ -61,12 +60,13 @@
       time = hr + ":" + min + ":" + sec;
       document.getElementById("date").innerText = `Time: ${time}`;
     }, 1);
+    $.getScript( "..js/utils.js", function( data, textStatus, jqxhr ) {
+    console.log( data ); // Data returned
+    console.log( textStatus ); // Success
+    console.log( jqxhr.status ); // 200
+    console.log( "Load was performed." );
+});
       </script>
-      <style>
-        p {
-          text-align: center;
-        }
-      </style>
     <h1>Event Dates and Calendar</h1>
     <h2>Calendar</h2>
     <h2>Event Dates</h2>
