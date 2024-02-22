@@ -56,7 +56,7 @@
       
       var today = new Date();
       var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
       var yyyy = today.getFullYear();
       var today2 = mm + '/' + dd + '/' + yyyy;
       var currentDate = new Date(); 
@@ -81,8 +81,8 @@
     <script>
         myEvents = [
   { 
-    id: "example-event-1",
-    name: "Example", 
+    id: "test-event-1",
+    name: "Test", 
     date: "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)", 
     type: "event", 
     everyYear: true,
