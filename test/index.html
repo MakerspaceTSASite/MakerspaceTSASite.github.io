@@ -62,18 +62,21 @@
     }, 1);
     addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
-      var url = currentUrl.replace("/test","/js/utils.js")
-      $.getScript(url)
-      .done(function( script, textStatus ) {
-      console.log( textStatus );
-      })
-    .fail(function( jqxhr, settings, exception ) {
-    console.log("Triggered ajaxError handler.");
+        if (window.jQuery) {
+          var url = currentUrl.replace("/test","/js/utils.js");
+          $.getScript(url)
+            .done(function(script, textStatus) {
+              console.log(textStatus);
+            })
+            .fail(function(jqxhr, settings, exception) {
+              console.log("Triggered ajaxError handler.");
+            });
+        } else {
+          console.log("jQuery is not loaded.");
+        }
+      },  3000);
     });
-    }, 3000);
-      });
-    
-      </script>
+    </script>
     <h1>Event Dates and Calendar</h1>
     <h2>Calendar</h2>
     <h2>Event Dates</h2>
