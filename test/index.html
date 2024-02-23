@@ -63,7 +63,7 @@
     addEventListener("DOMContentLoaded", () => {
       $(document).ready(function() {
         if (window.jQuery) {
-          $.getScript("/utils.js")
+          $.getScript("/js/utils.js")
             .done(function(script, textStatus) {
               console.log(textStatus);
             })
@@ -75,6 +75,7 @@
         }
       });
     });
+    console.log(randomInt(10, 20));
     </script>
     <h1>Event Dates and Calendar</h1>
     <h2>Calendar</h2>
