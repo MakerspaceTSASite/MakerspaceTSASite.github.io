@@ -63,14 +63,14 @@
     addEventListener("DOMContentLoaded", () => {
       $(document).ready(function() {
         if (window.jQuery) {
-          $.getScript("/js/utils.js").then(() => loadutils());
+          $.getScript("/js/utils.js").then(() => loadutils()).then(loadutils());
         } else {
           console.log("jQuery is not loaded.");
         }
+        console.log(randomInt(10, 20));
       });
     });
-    loadutils();
-    console.log(randomInt(10, 20));
+    
     </script>
     <h1>Event Dates and Calendar</h1>
     <h2>Calendar</h2>
