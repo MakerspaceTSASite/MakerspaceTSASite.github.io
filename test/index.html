@@ -61,9 +61,9 @@
       document.getElementById("date").innerText = `Time: ${time}`;
     }, 1);
     addEventListener("DOMContentLoaded", () => {
-      setTimeout(() => {
+      $(document).ready(function() {
         if (window.jQuery) {
-          $.getScript(currentUrl).replace("/test","/js/utils.js")
+          $.getScript("/utils.js")
             .done(function(script, textStatus) {
               console.log(textStatus);
             })
@@ -73,7 +73,7 @@
         } else {
           console.log("jQuery is not loaded.");
         }
-      },  1000);
+      });
     });
     </script>
     <h1>Event Dates and Calendar</h1>
