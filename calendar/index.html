@@ -20,6 +20,7 @@
         <button onclick="window.location.href=`${homeUrl}`">Home</button>
         <button onclick="window.location.href=`${aboutUrl}`">About</button>
         <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
+        <button onclick="window.location.href=`${membershipUrl}`">Membership Information</button>
       </menu>
     </div>
     <script>
@@ -38,18 +39,15 @@
         var time = "";
         var aboutUrl = "";
         var equipmentUrl = "";
+        var membershipUrl = "";
         setInterval(function() {
           currentUrl = window.location.href;
           aboutUrl = currentUrl.replace("/calendar","/about")
-        }, 100);
-        setInterval(function() {
-          currentUrl = window.location.href;
           equipmentUrl = currentUrl.replace("/calendar","/equipment-and-services")
+          homeUrl = currentUrl.replace("/calendar","");
+          membershipUrl = currentUrl.replace("/calendar","/membership-info");
         }, 100);
         setInterval(function () {
-          currentUrl = window.location.href;
-          homeUrl = currentUrl.replace("/calendar","");
-
           var today = new Date();
           var dd = String(today.getDate()).padStart(2, '0');
           var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
@@ -135,6 +133,18 @@
         $("#evoCalendar").evoCalendar('destroy');
         */
       </script>
+      <div id="hours">
+        <h2>Hours</h2>
+        <ul>
+          <li>Sunday: Closed</li>
+          <li>Monday: 8:00 AM - 8:00 PM</li>
+          <li>Tuesday: 8:00 AM - 7:00 AM</li>
+          <li>Wednesday: 8:00 AM - 8:00 PM</li>
+          <li>Thursday: 8:00 AM - 8:00 PM</li>
+          <li>Friday: 8:00 AM - 8:00 PM</li>
+          <li>Saturday: Closed</li>
+        </ul>
+      </div>
     </main>
   </body>
 </html>

@@ -15,6 +15,7 @@
         <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
         <button onclick="window.location.href=`${aboutUrl}`">About</button>
         <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
+        <button onclick="window.location.href=`${membershipUrl}`">Membership Info</button>
       </menu>
     </div>
     <main>
@@ -25,11 +26,13 @@
       var calendarUrl = "";
       var aboutUrl = "";
       var equipmentUrl = "";
+      var membershipUrl = "";
       setInterval(function() {
         currentUrl = window.location.href;
         calendarUrl = currentUrl + "calendar";
         aboutUrl = currentUrl + "about";
         equipmentUrl = currentUrl + "equipment-and-services";
+        membershipUrl = currentUrl + "membership-info";
       }, 100);
 
       $("#topbar").css({"width":window.innerWidth});

@@ -15,17 +15,13 @@
     var homeUrl = "";
     var currentUrl = "";
     var calendarUrl = "";
+    var membershipUrl = "";
     setInterval(function() {
       currentUrl = window.location.href;
-      homeUrl = currentUrl.replace("/about","")
-    }, 100);
-    setInterval(function() {
-      currentUrl = window.location.href;
-      calendarUrl = currentUrl.replace("/about","/calendar")
-    }, 100);
-    setInterval(function() {
-      currentUrl = window.location.href;
-      equipmentUrl = currentUrl.replace("/about","/equipment-and-services")
+      homeUrl = currentUrl.replace("/about","");
+      calendarUrl = currentUrl.replace("/about","/calendar");
+      equipmentUrl = currentUrl.replace("/about","/equipment-and-services");
+      equipmentUrl = currentUrl.replace("/about","/membership-info");
     }, 100);
   </script>
   <div id="topbar" oncontextmenu="return false;">
