@@ -160,7 +160,7 @@ input:focus, textarea:focus, button:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(83, 74, 109, 0.5);
+    background-color: rgba(78, 119, 95, 0.5);
 }
 .sidebar-hide .calendar-inner {
     max-width: calc(100% - 400px);
@@ -199,7 +199,7 @@ th[colspan="7"]::after {
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    background-color: rgba(135, 115, 193, 0.15);
+    background-color: rgba(106, 158, 138, 0.15);
 }
 tr.calendar-header {
 
