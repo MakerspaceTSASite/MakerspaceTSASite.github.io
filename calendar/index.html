@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/evo-calendar.css">
     <script src="../lib/JQuery.js" integrity="sha256-MnSZeU4f1L1WsaWOLCP4OAPr2/7ewy0colwYY7T4c9o=" crossorigin="anonymous"></script>
     <script src="../lib/moment.js"></script>
+    <script src="../lib/moment-timezone-with-data.js"></script>
     <script src="../lib/evo-calendar.js"></script>
     <script src="../js/main.js"></script>
   </head>
@@ -71,15 +72,18 @@
           time = hr + ":" + min + ":" + sec;
           time2 = formatAMPM(currentDate);
           let morning = time2.includes("am");
-          let overeight = time2[0] > 8;
-          let overseven = time2[0] > 7;
+          let overseven = parseInt(time2[0]) > 7;
+          let minoverzero = parseInt(time2[2] + time2[3]) > 0;
+          let overeight = parseInt(time2[0]) >= 8 && minoverzero;
+          moment().tz("US/Mountain").format();
           switch(day) {
             case 0:
             open = "closed";
             break;
             case 1:
+            minoverzero = parseInt(time2[2] + time2[3]) > 0;
             morning = time2.includes("am");
-            overeight = time2[0] > 8;
+            overeight = overeight = parseInt(time2[0]) >= 8 && minoverzero;
             if(overeight && morning || !overeight && !morning) {
               open = "open";
             } else {
@@ -87,9 +91,10 @@
             }
             break;
             case 2:
+            minoverzero = parseInt(time2[2] + time2[3]) > 0;
             morning = time2.includes("am");
-            overeight = time2[0] > 8;
-            overseven = time2[0] > 7;
+            overeight = overeight = parseInt(time2[0]) >= 8 && minoverzero;
+            overseven = parseInt(time2[0]) >= 7 && minoverzero;
             if(morning && overeight || !morning && !overseven) {
               open = "open";
             } else {
@@ -97,8 +102,9 @@
             }
             break;
             case 3:
+            minoverzero = parseInt(time2[2] + time2[3]) > 0;
             morning = time2.includes("am");
-            overeight = time2[0] > 8;
+            overeight = overeight = parseInt(time2[0]) >= 8 && minoverzero;
             if(overeight && morning || !overeight && !morning) {
               open = "open";
             } else {
@@ -106,8 +112,9 @@
             }
             break;
             case 4:
+            minoverzero = parseInt(time2[2] + time2[3]) > 0;
             morning = time2.includes("am");
-            overeight = time2[0] > 8;
+            overeight = overeight = parseInt(time2[0]) >= 8 && minoverzero;
             if(overeight && morning || !overeight && !morning) {
               open = "open";
             } else {
@@ -115,8 +122,9 @@
             }
             break;
             case 5:
+            minoverzero = parseInt(time2[2] + time2[3]) > 0;
             morning = time2.includes("am");
-            overeight = time2[0] > 8;
+            overeight = overeight = parseInt(time2[0]) >= 8 && minoverzero;
             if(overeight && morning || !overeight && !morning) {
               open = "open";
             } else {
