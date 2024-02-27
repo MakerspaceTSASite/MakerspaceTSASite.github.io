@@ -39,6 +39,23 @@
         var aboutUrl = "";
         var equipmentUrl = "";
         var membershipUrl = "";
+        var today;
+        var dd;
+        var mm;
+        var yyyy;
+        var today2;
+        var currentDate;
+        var hr;
+        var min;
+        var sec;
+        var day;
+        var open;
+        var morning;
+        var overseven;
+        var overeight;
+        var time2;
+        var time3;
+        var minoverzero;
         setInterval(function() {
           currentUrl = window.location.href;
           aboutUrl = currentUrl.replace("/calendar","/about")
@@ -57,25 +74,36 @@
             let strTime = hours + ':' + minutes + ' ' + ampm;
             return strTime;
           }
+          function formatAMPMMoment(date) {
+            let hours = date.slice(0,1);
+            let minutes = date.slice(3,4)
+            let ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+ minutes : minutes;
+            let strTime = hours + ':' + minutes + ' ' + ampm;
+            return strTime;
+          }
         setInterval(function () {
-          var today = new Date();
-          var dd = String(today.getDate()).padStart(2, '0');
-          var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
-          var yyyy = today.getFullYear();
-          var today2 = mm + '/' + dd + '/' + yyyy;
-          var currentDate = new Date();
-          var hr = String(currentDate.getHours()).padStart(2, '0');
-          var min = String(currentDate.getMinutes()).padStart(2, '0');
-          var sec = String(currentDate.getSeconds()).padStart(2, '0');
-          var day = currentDate.getDay();
-          var open;
+          today = new Date();
+          dd = String(today.getDate()).padStart(2, '0');
+          mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
+          yyyy = today.getFullYear();
+          today2 = mm + '/' + dd + '/' + yyyy;
+          currentDate = new Date();
+          hr = String(currentDate.getHours()).padStart(2, '0');
+          min = String(currentDate.getMinutes()).padStart(2, '0');
+          sec = String(currentDate.getSeconds()).padStart(2, '0');
+          day = currentDate.getDay();
           time = hr + ":" + min + ":" + sec;
-          time2 = formatAMPM(currentDate);
-          let morning = time2.includes("am");
-          let overseven = parseInt(time2[0]) > 7;
-          let minoverzero = parseInt(time2[2] + time2[3]) > 0;
-          let overeight = parseInt(time2[0]) >= 8 && minoverzero;
-          console.log(moment().tz("US/Mountain").format());
+          morning = time2.includes("am");
+          overseven = parseInt(time2[0]) > 7;
+          minoverzero = parseInt(time2[2] + time2[3]) > 0;
+          overeight = parseInt(time2[0]) >= 8 && minoverzero;
+          time2 = moment().tz("US/Mountain").format();
+          time3 = time2.slice(11, 16);
+          time4 = formatAMPMMoment(time3);
+          console.log(time4);
           switch(day) {
             case 0:
             open = "closed";
@@ -153,7 +181,9 @@
             date: "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
             type: "event",
             everyYear: true,
-            description: "Test"
+            description: "Test",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
           }
           // more events here
         ];
