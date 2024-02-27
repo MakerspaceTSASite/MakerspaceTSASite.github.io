@@ -34,6 +34,7 @@
         var currentUrl = "";
         var homeUrl = "";
         var time = "";
+        var time2 = "";
         var aboutUrl = "";
         var equipmentUrl = "";
         var membershipUrl = "";
@@ -44,6 +45,17 @@
           homeUrl = currentUrl.replace("/calendar","");
           membershipUrl = currentUrl.replace("/calendar","/membership-info");
         }, 100);
+        //const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        function formatAMPM(date) {
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+ minutes : minutes;
+            let strTime = hours + ':' + minutes + ' ' + ampm;
+            return strTime;
+          }
         setInterval(function () {
           var today = new Date();
           var dd = String(today.getDate()).padStart(2, '0');
@@ -54,11 +66,72 @@
           var hr = String(currentDate.getHours()).padStart(2, '0');
           var min = String(currentDate.getMinutes()).padStart(2, '0');
           var sec = String(currentDate.getSeconds()).padStart(2, '0');
+          var day = currentDate.getDay();
+          var open;
+          time = hr + ":" + min + ":" + sec;
+          time2 = formatAMPM(currentDate);
+          let morning = time2.includes("am");
+          let overeight = time2[0] > 8;
+          let overseven = time2[0] > 7;
+          switch(day) {
+            case 0:
+            open = "closed";
+            break;
+            case 1:
+            morning = time2.includes("am");
+            overeight = time2[0] > 8;
+            if(overeight && morning || !overeight && !morning) {
+              open = "open";
+            } else {
+              open = "closed";
+            }
+            break;
+            case 2:
+            morning = time2.includes("am");
+            overeight = time2[0] > 8;
+            overseven = time2[0] > 7;
+            if(morning && overeight || !morning && !overseven) {
+              open = "open";
+            } else {
+              open = "closed";
+            }
+            break;
+            case 3:
+            morning = time2.includes("am");
+            overeight = time2[0] > 8;
+            if(overeight && morning || !overeight && !morning) {
+              open = "open";
+            } else {
+              open = "closed";
+            }
+            break;
+            case 4:
+            morning = time2.includes("am");
+            overeight = time2[0] > 8;
+            if(overeight && morning || !overeight && !morning) {
+              open = "open";
+            } else {
+              open = "closed";
+            }
+            break;
+            case 5:
+            morning = time2.includes("am");
+            overeight = time2[0] > 8;
+            if(overeight && morning || !overeight && !morning) {
+              open = "open";
+            } else {
+              open = "closed";
+            }
+            break;
+            case 6:
+            open = "closed";
+            break;
+          }
           if(hr > 12) {
           hr -= 12;
           }
-          time = hr + ":" + min + ":" + sec;
           document.getElementById("date").innerText = `Time: ${time}`;
+          $("#currentopen").text("Currently: " + open);
         }, 1);
       </script>
       <h1>Event Dates and Calendar</h1>
@@ -133,6 +206,7 @@
       <div id="hours">
         <h2>Hours</h2>
         <ul>
+          <li id="currentopen">Currently: </li>
           <li>Sunday: Closed</li>
           <li>Monday: 8:00 AM - 8:00 PM</li>
           <li>Tuesday: 8:00 AM - 7:00 AM</li>
