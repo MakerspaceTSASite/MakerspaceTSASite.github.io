@@ -131,7 +131,7 @@
           hr -= 12;
           }
           document.getElementById("date").innerText = `Time: ${time}`;
-          $("#currentopen").text("Currently: " + open);
+          $("#hourlist").html(`<li>Currently: ${open} </li> <li>Sunday: Closed</li> <li>Monday: 8:00 AM - 8:00 PM</li> <li>Tuesday: 8:00 AM - 7:00 AM</li> <li>Wednesday: 8:00 AM - 8:00 PM</li> <li>Thursday: 8:00 AM - 8:00 PM</li> <li>Friday: 8:00 AM - 8:00 PM</li> <li>Saturday: Closed</li>`);
         }, 1);
       </script>
       <h1>Event Dates and Calendar</h1>
@@ -205,8 +205,8 @@
       </script>
       <div id="hours">
         <h2>Hours</h2>
-        <ul>
-          <li id="currentopen">Currently: </li>
+        <ul id="hourlist">
+          <li>Currently: </li>
           <li>Sunday: Closed</li>
           <li>Monday: 8:00 AM - 8:00 PM</li>
           <li>Tuesday: 8:00 AM - 7:00 AM</li>
