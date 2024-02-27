@@ -75,7 +75,7 @@
           let overseven = parseInt(time2[0]) > 7;
           let minoverzero = parseInt(time2[2] + time2[3]) > 0;
           let overeight = parseInt(time2[0]) >= 8 && minoverzero;
-          moment().tz("US/Mountain").format();
+          console.log(moment().tz("US/Mountain").format());
           switch(day) {
             case 0:
             open = "closed";
