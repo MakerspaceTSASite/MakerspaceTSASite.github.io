@@ -207,7 +207,7 @@ tr.calendar-header {
 tr.calendar-header .calendar-header-day {
     padding: 10px;
     text-align: center;
-    color: #5a5a5a;
+    color: #c7c7c7;
 }
 
 tr.calendar-body {
@@ -224,7 +224,7 @@ tr.calendar-body .calendar-day .day {
     margin: 0 auto;
     border-radius: 50%;
     text-align: center;
-    color: #5a5a5a;
+    color: #c7c7c7;
     border: 1px solid transparent;
     -webkit-transition: all .3s ease, -webkit-transform .5s ease;
     transition: all .3s ease, -webkit-transform .5s ease;
@@ -234,7 +234,7 @@ tr.calendar-body .calendar-day .day {
     cursor: pointer;
 }
 tr.calendar-body .calendar-day .day:hover {
-    background-color: #dadada;
+    background-color: #808080;
 }
 tr.calendar-body .calendar-day .day:active {
     -webkit-transform: scale(0.9);
@@ -244,7 +244,7 @@ tr.calendar-body .calendar-day .day:active {
 
 tr.calendar-body .calendar-day .day.calendar-active,
 tr.calendar-body .calendar-day .day.calendar-active:hover {
-    color: #5a5a5a;
+    color: #c4c3c3;
     border-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -253,14 +253,14 @@ tr.calendar-body .calendar-day .day.calendar-today {
     background-color: #000;
 }
 tr.calendar-body .calendar-day .day.calendar-today:hover {
-    color: #fff;
+    color: #6e6d6d;
     background-color: #000;
 }
 tr.calendar-body .calendar-day .day[disabled] {
     pointer-events: none;
     cursor: not-allowed;
     background-color: transparent;
-    color: #b9b9b9;
+    color: #757474;
 }
 
 

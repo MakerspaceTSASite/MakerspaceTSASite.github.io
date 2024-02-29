@@ -20,26 +20,44 @@
         <button onclick="window.location.href=`${aboutUrl}`">About</button>
         <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
         <button onclick="window.location.href=`${membershipUrl}`">Membership Information</button>
-        <button id="themeToggle" onclick="toggleTheme()">Light Mode</button>
+        <label class="switch">
+          <input id="themeToggle" type="checkbox" onchange="toggleTheme();">
+          <span class="slider round"></span>
+        </label>
       </menu>
       <script>
-        function toggleTheme() {
-  var themeToggle = document.getElementById('themeToggle');
-  var currentTheme = themeToggle.getAttribute('data-theme');
-  var newTheme;
+function toggleTheme() {
+ var themeToggle = $(".themeToggle");
+ var newTheme;
 
-  if (currentTheme === 'light') {
+ if (document.getElementById("themeToggle").checked == true) {
     newTheme = 'dark';
     themeToggle.textContent = 'Light Mode';
     document.getElementById('themeLink').href = '../css/darkmode.css';
-  } else {
+ } else {
     newTheme = 'light';
-    themeToggle.textContent = 'Dark Mode';
+    themeToggle.css({'content':"Dark"});
     document.getElementById('themeLink').href = '../css/lightmode.css';
-  }
-
-  themeToggle.setAttribute('data-theme', newTheme);
+ }
+ localStorage.setItem('theme', newTheme);
+ localStorage.setItem('checked', document.getElementById("themeToggle").checked);
 }
+document.addEventListener('DOMContentLoaded', function() {
+ document.getElementById("themeToggle").checked = localStorage.getItem('checked');
+ var savedTheme = localStorage.getItem('theme');
+ if (savedTheme) {
+    var themeToggle = document.getElementById('themeToggle');
+    var themeLink = document.getElementById('themeLink');
+    if (savedTheme === 'dark') {
+      themeToggle.textContent = 'Light Mode';
+      themeLink.href = '../css/darkmode.css';
+    } else {
+      themeToggle.textContent = 'Dark Mode';
+      themeLink.href = '../css/lightmode.css';
+    }
+    themeToggle.setAttribute('data-theme', savedTheme);
+ }
+});
       </script>
     </div>
     <script>
@@ -124,7 +142,6 @@
           time2 = moment().tz("US/Mountain").format();
           time3 = time2.slice(11, 16);
           time4 = formatAMPMMoment(time3);
-          console.log(time4);
           switch(day) {
             case 0:
             open = "closed";
