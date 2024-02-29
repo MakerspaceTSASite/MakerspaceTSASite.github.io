@@ -31,45 +31,44 @@
       <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
       <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
       <button onclick="window.location.href=`${membershipUrl}`">Membership Info</button>
-      <label class="switch">
-        <input id="themeToggle" type="checkbox" onchange="toggleTheme();">
-        <span class="slider round"></span>
-      </label>
-    </menu>
-    <script>
-      function toggleTheme() {
-       var themeToggle = $(".themeToggle");
-       var newTheme;
-      
-       if (document.getElementById("themeToggle").checked == true) {
-          newTheme = 'dark';
-          themeToggle.textContent = 'Light Mode';
-          document.getElementById('themeLink').href = '../css/darkmode.css';
-       } else {
-          newTheme = 'light';
-          themeToggle.css({'content':"Dark"});
-          document.getElementById('themeLink').href = '../css/lightmode.css';
-       }
-       localStorage.setItem('theme', newTheme);
-       localStorage.setItem('checked', document.getElementById("themeToggle").checked);
-      }
-      document.addEventListener('DOMContentLoaded', function() {
-       document.getElementById("themeToggle").checked = localStorage.getItem('checked');
-       var savedTheme = localStorage.getItem('theme');
-       if (savedTheme) {
-          var themeToggle = document.getElementById('themeToggle');
-          var themeLink = document.getElementById('themeLink');
-          if (savedTheme === 'dark') {
-            themeToggle.textContent = 'Light Mode';
-            themeLink.href = '../css/darkmode.css';
-          } else {
-            themeToggle.textContent = 'Dark Mode';
-            themeLink.href = '../css/lightmode.css';
-          }
-          themeToggle.setAttribute('data-theme', savedTheme);
-       }
-      });
-            </script>
+        <label for="themeToggle" id="switchLabel" class="switch">Light Mode</label>
+        <input id="themeToggle" class="switch" type="checkbox" onchange="toggleTheme();">
+      </menu>
+<script>
+var switchLabel = $("#switchLabel");
+function toggleTheme() {
+ var newTheme;
+ if (document.getElementById("themeToggle").checked == true) {
+    newTheme = 'dark';
+    switchLabel.text('Light Mode');
+    document.getElementById('themeLink').href = '../css/darkmode.css';
+ } else {
+    newTheme = 'light';
+    switchLabel.text('Dark Mode');
+    document.getElementById('themeLink').href = '../css/lightmode.css';
+ }
+ localStorage.setItem('theme', newTheme);
+ localStorage.setItem('checked', document.getElementById("themeToggle").checked);
+}
+document.addEventListener('DOMContentLoaded', function() {
+ var themeLink = document.getElementById('themeLink');
+ var currentTheme = themeLink.href.includes('darkmode.css') ? 'dark' : 'light';
+ var savedTheme = localStorage.getItem('theme');
+ var switchLabel = $("#switchLabel");
+
+ // Set the checkbox's checked state based on the current theme
+ document.getElementById("themeToggle").checked = (currentTheme === savedTheme);
+
+ // Update the switch label and theme link based on the saved theme
+ if (savedTheme === 'dark') {
+    switchLabel.text('Light Mode');
+    themeLink.href = '../css/darkmode.css';
+ } else {
+    switchLabel.text('Dark Mode');
+    themeLink.href = '../css/lightmode.css';
+ }
+});
+</script>
   </div>
   <script>
     $("#topbar").css({"width":window.innerWidth});
