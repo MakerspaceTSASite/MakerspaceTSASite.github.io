@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calendar</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link id="themeLink" rel="stylesheet" href="../css/lightmode.css">
     <link rel="stylesheet" href="../css/evo-calendar.css">
     <script src="../lib/JQuery.js" integrity="sha256-MnSZeU4f1L1WsaWOLCP4OAPr2/7ewy0colwYY7T4c9o=" crossorigin="anonymous"></script>
     <script src="../lib/moment.js"></script>
@@ -19,7 +20,27 @@
         <button onclick="window.location.href=`${aboutUrl}`">About</button>
         <button onclick="window.location.href=`${equipmentUrl}`">Equipment and Services</button>
         <button onclick="window.location.href=`${membershipUrl}`">Membership Information</button>
+        <button id="themeToggle" onclick="toggleTheme()">Light Mode</button>
       </menu>
+      <script>
+        function toggleTheme() {
+  var themeToggle = document.getElementById('themeToggle');
+  var currentTheme = themeToggle.getAttribute('data-theme');
+  var newTheme;
+
+  if (currentTheme === 'light') {
+    newTheme = 'dark';
+    themeToggle.textContent = 'Light Mode';
+    document.getElementById('themeLink').href = '../css/darkmode.css';
+  } else {
+    newTheme = 'light';
+    themeToggle.textContent = 'Dark Mode';
+    document.getElementById('themeLink').href = '../css/lightmode.css';
+  }
+
+  themeToggle.setAttribute('data-theme', newTheme);
+}
+      </script>
     </div>
     <script>
       $("#topbar").css({"width":window.innerWidth});

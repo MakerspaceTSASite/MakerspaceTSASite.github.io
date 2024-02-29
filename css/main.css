@@ -1,5 +1,4 @@
 body {
-    background-color: black;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -20,26 +19,13 @@ img {
     width: auto\9; /* ie8 */
 }
 h1, h2, h3, h4, h5, h6, p{
-    color: white;
     text-align: center;
 }
-input {
-    background-color: black;
-    color: white;
-}
-link {
-    color: white;
-}
-a {
-    color: white;
-}
+
 main {
-    background-color: black;
     text-align: center;
 }
 button {
-    background-color: black;
-    color: white;
     height: 5vh;
     min-height: 21px;
     max-height: 50px;
@@ -51,7 +37,6 @@ ul {
 }
 
 li {
-    color: white;
     text-align: center;
     padding-left:  0;
     margin-left:  0;
