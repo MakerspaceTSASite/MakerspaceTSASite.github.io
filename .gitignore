@@ -1,0 +1,6 @@
+# Node modules
+node_modules/
+# other stuff
+.eslintrc.js
+package.json
+package-lock.json
