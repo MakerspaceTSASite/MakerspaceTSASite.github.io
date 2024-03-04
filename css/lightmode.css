@@ -36,3 +36,106 @@ background-color: #2196F3;
 input:focus + .slider {
 box-shadow: 0 0 1px #2196F3;
 }
+.calendar-inner {
+    background-color: #fff;
+    -webkit-box-shadow: 5px 0 18px -3px rgba(255, 255, 255, 0.85);
+            box-shadow: 5px 0 18px -3px rgba(255, 255, 255, 0.85);
+}
+.calendar-events {
+    background-color: #fff;
+}
+.calendar-events > .event-header > p {
+    color: #000;
+}
+#eventListToggler {
+    background-color: #fff;
+    -webkit-box-shadow: 5px 0 18px -3px #fff;
+            box-shadow: 5px 0 18px -3px #fff;
+}
+.event-list > .event-empty {
+    border: 1px solid #fff;
+}
+@media screen and (max-width: 768px) {
+    .calendar-events {
+        -webkit-box-shadow: -5px 0 18px -3px #fff;
+        box-shadow: -5px 0 18px -3px #fff;
+    }
+}
+@media screen and (max-width: 425px) {
+    .calendar-sidebar > .calendar-year {
+        background-color: #fff;
+        -webkit-box-shadow: 0 3px 8px -3px #fff;
+                box-shadow: 0 3px 8px -3px #fff;
+    }
+    .calendar-events {
+-webkit-box-shadow: 0 5px 18px -3px #fff;
+box-shadow: 0 5px 18px -3px #fff;
+    } 
+    .calendar-sidebar > .month-list {
+        background-color: #fff;
+    }
+}
+.evo-calendar {
+    -webkit-box-shadow: 0 10px 50px -20px #fff;
+    box-shadow: 0 10px 50px -20px #fff;
+}
+.calendar-sidebar {
+    -webkit-box-shadow: 5px 0 18px -3px #fff;
+    box-shadow: 5px 0 18px -3px #fff;
+    color: #000;
+}
+.calendar-sidebar > span#sidebarToggler {
+    background-color: #fff;
+    -webkit-box-shadow: 5px 0 18px -3px #fff;
+            box-shadow: 5px 0 18px -3px #fff;
+}
+tr.calendar-body .calendar-day .day.calendar-active,
+tr.calendar-body .calendar-day .day.calendar-active:hover {
+    color: #b8b6b6;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+tr.calendar-body .calendar-day .day.calendar-today {
+    color: #000;
+    background-color: #fff;
+}
+tr.calendar-body .calendar-day .day.calendar-today:hover {
+    color: #6e6d6d;
+    background-color: #fff;
+}
+.calendar-sidebar > .calendar-year > button.icon-button > span {
+    border-right: 4px solid #000;
+    border-bottom: 4px solid #000;
+}
+.calendar-sidebar > .month-list::-webkit-scrollbar-thumb {
+    background: #000;
+}
+th[colspan="7"] {
+    color: #000;
+}
+.event-list > .event-empty > p {
+    color: #000;
+}
+.event-container:hover {
+    background-color: #000;
+    -webkit-box-shadow: 0 3px 12px -4px rgba(0, 0, 0, 0.65);
+            box-shadow: 0 3px 12px -4px rgba(0, 0, 0, 0.65);
+}
+button.icon-button > span.bars {
+    background-color: #000;
+}
+button.icon-button > span.bars::before,
+button.icon-button > span.bars::after { 
+    background-color: #000;
+}
+button.icon-button > span.chevron-arrow-left {
+    border-right: 6px solid #000;
+    border-bottom: 6px solid #000;
+}
+button.icon-button > span.chevron-arrow-right {
+    border-right: 4px solid #000;
+    border-bottom: 4px solid #000;
+}
+.event-container > .event-info > p.event-title > span { 
+    background-color: rgb(122, 120, 128);
+}
