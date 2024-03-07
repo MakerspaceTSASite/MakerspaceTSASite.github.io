@@ -1,6 +1,9 @@
-# Node modules
+# Node Modules
 node_modules/
-# other stuff
+# ESLint Config
 .eslintrc.js
+# Node.js Config
 package.json
 package-lock.json
+# VSCode Counter Files
+.VSCodeCounter
