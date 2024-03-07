@@ -21,6 +21,30 @@
         <label for="themeToggle" id="switchLabel" class="switch">Light Mode</label>
         <input id="themeToggle" class="switch" type="checkbox" onchange="toggleTheme();">
       </menu>
+      <script>
+        fetch('../assets/equipment.json')
+          .then(response => response.json())
+          .then(data => {
+            const mainHeading = document.createElement('h1');
+            mainHeading.textContent = data.title;
+            document.body.appendChild(mainHeading);
+
+            data.sections.forEach(section => {
+              const sectionHeading = document.createElement('h2');
+              sectionHeading.textContent = section.heading;
+              document.body.appendChild(sectionHeading);
+
+              const list = document.createElement('ul');
+              section.items.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                list.appendChild(listItem);
+              });
+              document.body.appendChild(list);
+            });
+          })
+          .catch(error => console.error('Error:', error));
+      </script>
 <script>
 var switchLabel = $("#switchLabel");
 function toggleTheme() {
@@ -58,30 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
     </div>
     <main>
-      <script>
-        fetch('../assets/equipment-and-services.json')
-          .then(response => response.json())
-          .then(data => {
-            const mainHeading = document.createElement('h1');
-            mainHeading.textContent = data.title;
-            document.body.appendChild(mainHeading);
-
-            data.sections.forEach(section => {
-              const sectionHeading = document.createElement('h2');
-              sectionHeading.textContent = section.heading;
-              document.body.appendChild(sectionHeading);
-
-              const list = document.createElement('ul');
-              section.items.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.textContent = item;
-                list.appendChild(listItem);
-              });
-              document.body.appendChild(list);
-            });
-          })
-          .catch(error => console.error('Error:', error));
-      </script>
       <div id="reserve">
         <p>Non-members limited to 5 reservations at the same time.</p>
         <a href="mailto:filler@example.com?subject=Reserve%20Equipment%20or%20Space&body=I%20would%20like%20to%20reserve%20___%20from%20___%20until%20__.">Send Reservation Request Email</a>
