@@ -5,3 +5,9 @@ $('img').mousedown(function (e) {
 		return false; // do nothing!
 	}
 });
+// eslint-disable-next-line no-undef
+$('body').mousedown(function (e) {
+	if(e.button == 2) { // right click
+		return false; // do nothing!
+	}
+});

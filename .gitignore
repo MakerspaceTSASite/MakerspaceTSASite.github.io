@@ -7,3 +7,10 @@ package.json
 package-lock.json
 # VSCode Counter Files
 .VSCodeCounter
+# VS Code stuff
+.vscode
+# Anything that doesn't get used
+/js/utils.js
+/test
+/lib/momentoriginal.js
+/lib/JQuery-nonslim.js
