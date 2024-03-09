@@ -10,7 +10,7 @@ package-lock.json
 # VS Code stuff
 .vscode
 # Anything that doesn't get used
-/js/utils.js
-/test
-/lib/momentoriginal.js
-/lib/JQuery-nonslim.js
+test
+lib/momentoriginal.js
+lib/JQuery-nonslim.js
+js/utils.js
