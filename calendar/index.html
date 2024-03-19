@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     </script>
     <main>
-      <p id="date">If you see this, an error occured. Please refresh the page.</p>
       <script>
         var currentUrl = "";
         var homeUrl = "";
@@ -143,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
           time2 = moment().tz("US/Mountain").format();
           time3 = time2.slice(11, 16);
           time4 = formatAMPMMoment(time3);
+          let time5 = time2.slice(5,10);
           switch(day) {
             case 0:
             open = "closed";
@@ -202,10 +202,15 @@ document.addEventListener('DOMContentLoaded', function() {
             open = "closed";
             break;
           }
+          for(let i = 0; i < myEvents.length; i++) {
+          if(time5 = myEvents[i].datemoment) {
+            open = "closed";
+          }
+          }
           if(hr > 12) {
           hr -= 12;
           }
-          document.getElementById("date").innerText = `Time: ${time}`;
+          
           $("#hourlist").html(`<li>Currently: ${open} </li> <li>Sunday: Closed</li> <li>Monday: 8:00 AM - 8:00 PM</li> <li>Tuesday: 8:00 AM - 7:00 AM</li> <li>Wednesday: 8:00 AM - 8:00 PM</li> <li>Thursday: 8:00 AM - 8:00 PM</li> <li>Friday: 8:00 AM - 8:00 PM</li> <li>Saturday: Closed</li>`);
         }, 1);
       </script>
@@ -218,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: "test-event-1",
             name: "Test",
             date: "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "01-01",
             type: "event",
             everyYear: true,
             description: "Test",
@@ -239,46 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
           eventDisplayDefault: true,
           theme: 'Orange Coral'
         });
-        /*
-        // set theme
-        $("#evoCalendar").evoCalendar('setTheme', themeName);
-
-        // toggle sidebar
-        $("#evoCalendar").evoCalendar('toggleSidebar', true/false);
-
-        // toggle event list
-        $("#evoCalendar").evoCalendar('toggleEventList', true/false);
-
-        // get the selected date
-        $("#evoCalendar").evoCalendar('getActiveDate');
-
-        // get active events
-        $("#evoCalendar").evoCalendar('getActiveEvents');
-
-        // select a year
-        $("#evoCalendar").evoCalendar('selectYear', yearNumber);
-
-        // select a month
-        $("#evoCalendar").evoCalendar('selectMonth', monthNumber);
-
-        // select a date
-        $("#evoCalendar").evoCalendar('selectDate', dateNumber);
-
-        // add events
-        $("#evoCalendar").evoCalendar('addCalendarEvent', [{
-          id: 'Event ID',
-          name: "Event Name",
-          date: "Date Here",
-          type: "Event Type",
-          everyYear: true
-        }]);
-
-        // remove events by ID
-        $("#evoCalendar").evoCalendar('removeCalendarEvent', eventID);
-
-        // destroy the calendar
-        $("#evoCalendar").evoCalendar('destroy');
-        */
       </script>
       <div id="hours">
         <h2>Hours</h2>
