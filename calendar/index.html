@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var overeight;
         var time2;
         var time3;
+        var time5;
         var minoverzero;
         setInterval(function() {
           currentUrl = window.location.href;
@@ -142,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
           time2 = moment().tz("US/Mountain").format();
           time3 = time2.slice(11, 16);
           time4 = formatAMPMMoment(time3);
-          let time5 = time2.slice(5,10);
+          time5 = time2.slice(5,10);
           switch(day) {
             case 0:
             open = "closed";
@@ -203,8 +204,9 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
           }
           for(let i = 0; i < myEvents.length; i++) {
-          if(time5 = myEvents[i].datemoment) {
+          if(time5 == myEvents[i].datemoment) {
             open = "closed";
+            console.log("Is holiay");
           }
           }
           if(hr > 12) {
@@ -220,13 +222,123 @@ document.addEventListener('DOMContentLoaded', function() {
       <script>
         var myEvents = [
           {
-            id: "test-event-1",
-            name: "Test",
-            date: "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
+            id: "NewYear",
+            name: "New Year's Day",
+            date: "Wed Jan 01 2025 00:00:00 GMT-0800 (Pacific Standard Time)",
             datemoment: "01-01",
-            type: "event",
+            type: "holiday",
             everyYear: true,
-            description: "Test",
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "Mlk",
+            name: "Martin Luther King Day",
+            date: "Mon Jan 15 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "01-15",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "Washington",
+            name: "Washington's Birthday",
+            date: "Mon Feb 19 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "02-19",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "ColDay",
+            name: "Columbus Day",
+            date: "Mon Oct 14 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "10-14",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "Thanksgiving",
+            name: "Thanksgiving Day",
+            date: "Mon Nov 28 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "11-28",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "MemDay",
+            name: "Memorial Day",
+            date: "Mon May 27 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "05-27",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "LabDay",
+            name: "Labor's Day",
+            date: "Mon Sep 2 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "09-02",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "Juneteenth",
+            name: "Juneteenth National Independence Day",
+            date: "Wed Jun 19 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "06-19",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "IndDay",
+            name: "Independence Day",
+            date: "Thu Jul 4 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "07-04",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "VetDay",
+            name: "Veterans' Day",
+            date: "Mon Nov 11 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "11-11",
+            type: "holiday",
+            everyYear: true,
+            description: "",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "true"
+          },
+          {
+            id: "Christmas",
+            name: "Christmas",
+            date: "Mon Dec 25 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            datemoment: "12-25",
+            type: "holiday",
+            everyYear: true,
+            description: "",
             //Will be used to check if the makerspace is closed due to a holiday or not.
             closed: "true"
           }
@@ -248,8 +360,9 @@ document.addEventListener('DOMContentLoaded', function() {
       </script>
       <div id="hours">
         <h2>Hours</h2>
+        <p>Note: If there is a national holiday, this list may be incorrect.</p>
         <ul id="hourlist">
-          <li>Currently: </li>
+          <li>Currently: It seems like there has been an error! Please refresh the page.</li>
           <li>Sunday: Closed</li>
           <li>Monday: 8:00 AM - 8:00 PM</li>
           <li>Tuesday: 8:00 AM - 7:00 AM</li>
