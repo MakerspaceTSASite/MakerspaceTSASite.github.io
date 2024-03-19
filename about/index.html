@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
  var switchLabel = $("#switchLabel");
 
  // Set the checkbox's checked state based on the current theme
- document.getElementById("themeToggle").checked = (currentTheme === savedTheme);
+ document.getElementById("themeToggle").checked = currentTheme;
 
  // Update the switch label and theme link based on the saved theme
  if (savedTheme === 'dark') {
@@ -79,8 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
       $(document.body).css({"width":window.innerWidth});
     });
   </script>
-  <body oncontextmenu="return false;">
+  <body style="background-image: url(../assets/img/background.jpg); background-size:100vw;" oncontextmenu="return false;">
     <main>
+    <h1>About Us</h1>
+    <p>We are a locally owned and operated makerspace, based in Los Lunas, New Mexico. We offer a wide array of materials and tools for use in any projects you may have.</p>
     <h1>Copyright Info and Licenses</h1>
     <h2>Evo Calendar</h2>
      <a href="https://www.jqueryscript.net/time-clock/event-calendar-evo.html">Calendar (evo-calendar) from here</a> 
@@ -104,11 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
     <br>
     <br>
     <a href="https://opensource.org/license/mit/">General/blank MIT License (All libraries listed above use the MIT License.)</a>
-    <br>
-    <br>
-    <br>
-    <h2>Evo Calendar</h2>
-    <a href="hotpot.ai/art-generator/">AI art generator used for images</a>
   </main>
   </body>
 </html>

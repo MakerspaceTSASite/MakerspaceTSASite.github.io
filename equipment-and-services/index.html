@@ -11,7 +11,7 @@
     <script src="../lib/moment.js"></script>
     <script src="../js/main.js"></script>
   </head>
-  <body oncontextmenu="return false;">
+  <body style="background-image: url(../assets/img/background.jpg); background-size:100vw;" oncontextmenu="return false;">
     <div id="topbar" oncontextmenu="return false;">
       <menu type="toolbar">
         <button onclick="window.location.href=`${calendarUrl}`">Event Dates and Calendar</button>
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
  var switchLabel = $("#switchLabel");
 
  // Set the checkbox's checked state based on the current theme
- document.getElementById("themeToggle").checked = (currentTheme === savedTheme);
+ document.getElementById("themeToggle").checked = currentTheme;
 
  // Update the switch label and theme link based on the saved theme
  if (savedTheme === 'dark') {
