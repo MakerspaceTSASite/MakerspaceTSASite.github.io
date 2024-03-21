@@ -63,6 +63,18 @@ height: 5vh;
 min-height: 21px;
 max-height: 50px;
 }
+#toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -16px;
+    left: -8px; width: 1366px;
+    height: 5vh;
+    min-height: 21px;
+    max-height: 50px; 
+}
 #switchLabel {
   position: relative;
   right: -0px;
