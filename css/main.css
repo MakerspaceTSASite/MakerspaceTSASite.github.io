@@ -12,7 +12,6 @@ body {
     background-position-y: 1200px;
 }
 #topbar > button {
-    text-align: left;
 } 
 img {
     user-select: none;
@@ -53,7 +52,7 @@ color: blue;
 }
 #topbar{
 background-color: rgb(0, 255, 183);
-align-items: start;
+
 align-content: start;
 position: relative;
 top: -16px;
@@ -70,7 +69,8 @@ max-height: 50px;
     justify-content: center;
     position: relative;
     top: -16px;
-    left: -8px; width: 1366px;
+    left: -8px;
+    width: 1366px;
     height: 5vh;
     min-height: 21px;
     max-height: 50px; 
