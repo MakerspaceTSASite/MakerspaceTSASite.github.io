@@ -65,6 +65,10 @@ max-height: 50px;
     width: 100%;
     box-sizing: border-box; /* Ensures padding and border are included in the element's total width */
 }
+.topbar {
+    top: -8px;
+    left: -8px;
+}
 #toolbar {
     display: flex;
     flex-direction: row;
