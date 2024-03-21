@@ -11,3 +11,11 @@ $('body').mousedown(function (e) {
 		return false;
 	}
 });
+$("#topbar").css({"width":window.innerWidth});
+$("#toolbar").css({"width":window.innerWidth});
+$(document.body).css({"width":window.innerWidth});
+addEventListener("resize", (event) => {
+  $("#toolbar").css({"width":window.innerWidth});
+  $("#topbar").css({"width":window.innerWidth});
+  $(document.body).css({"width":window.innerWidth});
+});

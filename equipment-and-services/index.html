@@ -100,12 +100,10 @@ document.addEventListener('DOMContentLoaded', function() {
         homeUrl = currentUrl.replace("/equipment-and-services", "");
         membershipUrl = currentUrl.replace("/equipment-and-services", "/membership-info");
       }, 100);
+
       $("#topbar").css({"width":window.innerWidth});
+      $("#toolbar").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
-      addEventListener("resize", function() {
-        $("#topbar").css({"width":window.innerWidth});
-        $(document.body).css({"width":window.innerWidth});
-      });
     </script>
   </body>
 </html>

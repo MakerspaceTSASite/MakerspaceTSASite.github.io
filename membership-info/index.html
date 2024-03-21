@@ -77,11 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 100);
 
       $("#topbar").css({"width":window.innerWidth});
+      $("#toolbar").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
-      addEventListener("resize", (event) => {
-        $("#topbar").css({"width":window.innerWidth});
-        $(document.body).css({"width":window.innerWidth});
-      });
     </script>
   </body>
 </html>
