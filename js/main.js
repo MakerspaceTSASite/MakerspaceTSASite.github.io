@@ -11,11 +11,18 @@ $('body').mousedown(function (e) {
 		return false;
 	}
 });
-$("#topbar").css({"width":window.innerWidth});
-$("#toolbar").css({"width":window.innerWidth});
-$(document.body).css({"width":window.innerWidth});
-addEventListener("resize", (event) => {
-  $("#toolbar").css({"width":window.innerWidth});
-  $("#topbar").css({"width":window.innerWidth});
-  $(document.body).css({"width":window.innerWidth});
+
+// eslint-disable-next-line no-undef
+$('#topbar').css({'width':window.innerWidth});
+// eslint-disable-next-line no-undef
+$('#toolbar').css({'width':window.innerWidth});
+// eslint-disable-next-line no-undef
+$(document.body).css({'width':window.innerWidth});
+addEventListener('resize', () => {
+	// eslint-disable-next-line no-undef
+	$('#toolbar').css({'width':window.innerWidth});
+	// eslint-disable-next-line no-undef
+	$('#topbar').css({'width':window.innerWidth});
+	// eslint-disable-next-line no-undef
+	$(document.body).css({'width':window.innerWidth});
 });
