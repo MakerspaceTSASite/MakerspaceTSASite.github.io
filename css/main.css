@@ -11,7 +11,7 @@ body {
     background-image: url(../assets/img/background.jpg);
     background-position-y: 1200px;
 }
-#topbar button {
+#topbar button, #topbar > checkbox {
     margin: 0; /* Removes default margin */
     padding: 10px 20px; /* Adjusts padding for better spacing */
     /* Additional styling as needed */
