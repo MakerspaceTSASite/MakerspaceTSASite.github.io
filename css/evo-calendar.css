@@ -285,7 +285,7 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 .event-list > .event-empty {
     padding: 15px 10px;
-    background-color: rgba(63, 255, 201, 0.15);
+    background-color: rgba(255, 255, 255, 0.521);
 }
 .event-list > .event-empty > p {
     margin: 0;
