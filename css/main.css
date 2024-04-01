@@ -8,9 +8,22 @@ body {
     width: 1366px;
     overflow-x: hidden;
     text-align: center;
-    background-image: url(../assets/img/background.jpg);
+    background-image: url(/assets/img/background-final.jpg);
+    background-size: 100vw;
     background-position-y: 1200px;
 }
+#imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+#imgs img {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+    height: auto;
+  }
 #topbar button, #topbar input, #topbar label {
     margin: 0; /* Removes default margin */
     padding: 10px 20px; /* Adjusts padding for better spacing */
@@ -35,9 +48,9 @@ h1, h2, h3, h4, h5, h6, p{
     text-align: center;
 }
 
-main {
+/*main {
     text-align: center;
-}
+}*/
 button {
     height: 5vh;
     min-height: 21px;
