@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "NewYear",
             name: "New Year's Day",
-            date: "Wed Jan 01 2025 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Wed Jan 01 2025 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "01-01",
             type: "holiday",
             everyYear: true,
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "Mlk",
             name: "Martin Luther King Day",
-            date: "Mon Jan 15 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Mon Jan 15 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "01-15",
             type: "holiday",
             everyYear: true,
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "Washington",
             name: "Washington's Birthday",
-            date: "Mon Feb 19 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Mon Feb 19 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "02-19",
             type: "holiday",
             everyYear: true,
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "ColDay",
             name: "Columbus Day",
-            date: "Mon Oct 14 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Mon Oct 14 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "10-14",
             type: "holiday",
             everyYear: true,
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "Thanksgiving",
             name: "Thanksgiving Day",
-            date: "Mon Nov 28 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Mon Nov 28 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "11-28",
             type: "holiday",
             everyYear: true,
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "MemDay",
             name: "Memorial Day",
-            date: "Mon May 27 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Mon May 27 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "05-27",
             type: "holiday",
             everyYear: true,
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "LabDay",
             name: "Labor's Day",
-            date: "Mon Sep 2 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Mon Sep 2 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "09-02",
             type: "holiday",
             everyYear: true,
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "Juneteenth",
             name: "Juneteenth National Independence Day",
-            date: "Wed Jun 19 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Wed Jun 19 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "06-19",
             type: "holiday",
             everyYear: true,
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "IndDay",
             name: "Independence Day",
-            date: "Thu Jul 4 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Thu Jul 4 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "07-04",
             type: "holiday",
             everyYear: true,
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "VetDay",
             name: "Veterans' Day",
-            date: "Mon Nov 11 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Mon Nov 11 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "11-11",
             type: "holiday",
             everyYear: true,
@@ -331,13 +331,35 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: "Christmas",
             name: "Christmas",
-            date: "Mon Dec 25 2024 00:00:00 GMT-0800 (Pacific Standard Time)",
+            date: "Mon Dec 25 2024 00:00:00 GMT-0700 (Mountain Standard Time)",
             datemoment: "12-25",
             type: "holiday",
             everyYear: true,
             description: "",
             //Will be used to check if the makerspace is closed due to a holiday or not.
             closed: "true"
+          },
+          {
+            id: "opening",
+            name: "Grand Opening",
+            date: "Wed Apr 03 2024 12:00:00 GMT-0700 (Mountain Standard Time)",
+            datemoment: "04-03",
+            type: "event",
+            everyYear: false,
+            description: "The day we open for the very first time!",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "false"
+          },
+          {
+            id: "openingcel",
+            name: "Celebration of Our Grand Opening",
+            date: "Wed Apr 03 2025 07:00:00 GMT-0700 (Mountain Standard Time)",
+            datemoment: "04-03",
+            type: "event",
+            everyYear: true,
+            description: "The celebration for the day we opened the very first time! Memberships are half off for this day.",
+            //Will be used to check if the makerspace is closed due to a holiday or not.
+            closed: "false"
           }
           // more events here
         ];
