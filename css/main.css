@@ -76,13 +76,16 @@ color: blue;
 background-color: rgb(0, 255, 183);
 left: -8px;
 align-content: start;
-position: relative;
 width: 1366px;
 height: 5vh;
 min-height: 21px;
 max-height: 70px;
 width: 100%;
-box-sizing: border-box; /* Ensures padding and border are included in the element's total width */
+box-sizing: border-box;
+transition: top 0.3s ease-out;
+position: fixed;
+z-index: 1000;
+/*width: 100%;*/
 }
 .topbar {
     width: 100%;

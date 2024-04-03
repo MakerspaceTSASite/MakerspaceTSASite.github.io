@@ -58,6 +58,21 @@ document.addEventListener('DOMContentLoaded', function() {
     themeLink.href = '../css/lightmode.css';
  }
 });
+let lastScrollTop = 0; // Variable to keep track of the last scroll position
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop; // Get current scroll position
+        let topbar = document.getElementById('topbar');
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            topbar.style.top = '-5vh'; // Hide the topbar
+        } else {
+            // Scrolling up
+            topbar.style.top = '0'; // Show the topbar
+        }
+        lastScrollTop = scrollTop; // Update the last scroll position
+    });
 </script>
      
     </div>
