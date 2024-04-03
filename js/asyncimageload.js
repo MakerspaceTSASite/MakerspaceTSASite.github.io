@@ -43,6 +43,6 @@
 					loadImage(image, observer);
 				}
 			});
-		}, 10000); // 10 seconds delay
+		}, 5000); // 10 seconds delay
 	};
 })();
