@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
     <title>About + credits/info</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link id="themeLink" rel="stylesheet" href="./css/darkmode.css">
-    <script src="./lib/JQuery.js" integrity="sha256-DiBK3+LzK3b9Plu41HTpEjJRj4i7GnIKzUd5WO67Hgc=" crossorigin="anonymous"></script>
-    <script src="./lib/moment.js"></script>
-    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link id="themeLink" rel="stylesheet" href="../css/darkmode.css">
+    <script src="../lib/JQuery.js" integrity="sha256-DiBK3+LzK3b9Plu41HTpEjJRj4i7GnIKzUd5WO67Hgc=" crossorigin="anonymous"></script>
+
+    <script src="../js/main.js"></script>
   </head>
   <script>
     var calendarUrl = "";
@@ -42,11 +42,11 @@ function toggleTheme() {
  if (document.getElementById("themeToggle").checked == true) {
     newTheme = 'dark';
     switchLabel.text('Light Mode');
-    document.getElementById('themeLink').href = './css/darkmode.css';
+    document.getElementById('themeLink').href = '../css/darkmode.css';
  } else {
     newTheme = 'light';
     switchLabel.text('Dark Mode');
-    document.getElementById('themeLink').href = './css/lightmode.css';
+    document.getElementById('themeLink').href = '../css/lightmode.css';
  }
  localStorage.setItem('theme', newTheme);
  localStorage.setItem('checked', document.getElementById("themeToggle").checked);
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
  // Update the switch label and theme link based on the saved theme
  if (savedTheme === 'dark') {
     switchLabel.text('Light Mode');
-    themeLink.href = './css/darkmode.css';
+    themeLink.href = '../css/darkmode.css';
  } else {
     switchLabel.text('Dark Mode');
-    themeLink.href = './css/lightmode.css';
+    themeLink.href = '../css/lightmode.css';
  }
 });
 let lastScrollTop = 0; // Variable to keep track of the last scroll position
