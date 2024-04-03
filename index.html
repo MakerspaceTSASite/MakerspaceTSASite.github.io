@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Makerspace</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link id="themeLink" rel="stylesheet" href="../css/darkmode.css">
-    <script src="../lib/JQuery.js" integrity="sha256-DiBK3+LzK3b9Plu41HTpEjJRj4i7GnIKzUd5WO67Hgc=" crossorigin="anonymous"></script>
-    <script src="../lib/moment.js"></script>
-    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <link id="themeLink" rel="stylesheet" href="./css/darkmode.css">
+    <script src="./lib/JQuery.js" integrity="sha256-DiBK3+LzK3b9Plu41HTpEjJRj4i7GnIKzUd5WO67Hgc=" crossorigin="anonymous"></script>
+    <script src="./lib/moment.js"></script>
+    <script src="./js/main.js"></script>
   </head>
   <body oncontextmenu="return false;">
     <div id="topbar" class="topbar" oncontextmenu="return false;">
@@ -28,11 +28,11 @@ function toggleTheme() {
  if (document.getElementById("themeToggle").checked == true) {
     newTheme = 'dark';
     switchLabel.text('Light Mode');
-    document.getElementById('themeLink').href = '../css/darkmode.css';
+    document.getElementById('themeLink').href = './css/darkmode.css';
  } else {
     newTheme = 'light';
     switchLabel.text('Dark Mode');
-    document.getElementById('themeLink').href = '../css/lightmode.css';
+    document.getElementById('themeLink').href = './css/lightmode.css';
  }
  localStorage.setItem('theme', newTheme);
  localStorage.setItem('checked', document.getElementById("themeToggle").checked);
@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
  // Update the switch label and theme link based on the saved theme
  if (savedTheme === 'dark') {
     switchLabel.text('Light Mode');
-    themeLink.href = '../css/darkmode.css';
+    themeLink.href = './css/darkmode.css';
  } else {
     switchLabel.text('Dark Mode');
-    themeLink.href = '../css/lightmode.css';
+    themeLink.href = './css/lightmode.css';
  }
 });
 let lastScrollTop = 0; // Variable to keep track of the last scroll position
@@ -74,91 +74,91 @@ let lastScrollTop = 0; // Variable to keep track of the last scroll position
     </div>
     <main>
       <h3>Our Logo</h3>
-      <img src="./assets/img/logo.jpg" width="500" height="500">
+      <img src="./assets/images/logo.jpg" width="500" height="500">
       <h1>Home Page</h1>
       <div id="imgs">
       <figure>
-        <img class="asyncImage" data-src="./assets/img/high/makerspaceusers.png" src="./assets/img/min/makerspaceusers.png" alt="People using a breadboard. Credit: hotpot.ai/art-generator" title="Credit: hotpot.ai/art-generator" width="400" height="400">
+        <img class="asyncImage" data-src="./assets/images/high/makerspaceusers.png" src="./assets/images/min/makerspaceusers.png" alt="People using a breadboard. Credit: hotpot.ai/art-generator" title="Credit: hotpot.ai/art-generator" width="400" height="400">
         <figcaption>Credit: <a href="https://hotpot.ai/art-generator">hotpot.ai/art-generator</a></figcaption>
     </figure>
     <figure>
-      <img class="asyncImage" data-src="./assets/img/high/IMG_4503.png" src="./assets/img/min/IMG_4503.png" alt="A circuit playground express kit." width="400" height="400">
+      <img class="asyncImage" data-src="./assets/images/high/IMG_4503.png" src="./assets/images/min/IMG_4503.png" alt="A circuit playground express kit." width="400" height="400">
       <figcaption>A circuit playground express kit.</figcaption>
   </figure>
   <figure>
-    <img class="asyncImage" data-src="./assets/img/high/IMG_4505.png" src="./assets/img/min/IMG_4505.png" alt="A project being worked on in the makerspace." width="400" height="400">
+    <img class="asyncImage" data-src="./assets/images/high/IMG_4505.png" src="./assets/images/min/IMG_4505.png" alt="A project being worked on in the makerspace." width="400" height="400">
     <figcaption>A project being worked on in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4506.png" src="./assets/img/min/IMG_4506.png" alt="Some of the computers in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4506.png" src="./assets/images/min/IMG_4506.png" alt="Some of the computers in the makerspace." width="400" height="400">
   <figcaption>Some of the computers in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4507.png" src="./assets/img/min/IMG_4507.png" alt="Some of the computers in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4507.png" src="./assets/images/min/IMG_4507.png" alt="Some of the computers in the makerspace." width="400" height="400">
   <figcaption>Some of the computers in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4508.png" src="./assets/img/min/IMG_4508.png" alt="A variable speed scroll saw in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4508.png" src="./assets/images/min/IMG_4508.png" alt="A variable speed scroll saw in the makerspace." width="400" height="400">
   <figcaption>A variable speed scroll saw in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4509.png" src="./assets/img/min/IMG_4509.png" alt="A vertical band saw in the makerspace" width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4509.png" src="./assets/images/min/IMG_4509.png" alt="A vertical band saw in the makerspace" width="400" height="400">
   <figcaption>A vertical band saw in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4510.png" src="./assets/img/min/IMG_4510.png" alt="A tool cabinet and toolbox in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4510.png" src="./assets/images/min/IMG_4510.png" alt="A tool cabinet and toolbox in the makerspace." width="400" height="400">
   <figcaption>A tool cabinet and toolbox in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4513.png" src="./assets/img/min/IMG_4513.png" alt="Some of the adhesives and some educational kits on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4513.png" src="./assets/images/min/IMG_4513.png" alt="Some of the adhesives and some educational kits on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some of the adhesives and some educational kits on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4514.png" src="./assets/img/min/IMG_4514.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4514.png" src="./assets/images/min/IMG_4514.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some assorted tools and materials on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4515.png" src="./assets/img/min/IMG_4515.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4515.png" src="./assets/images/min/IMG_4515.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some assorted tools and materials on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4516.png" src="./assets/img/min/IMG_4516.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4516.png" src="./assets/images/min/IMG_4516.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some assorted tools and materials on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4517.png" src="./assets/img/min/IMG_4517.png" alt="Some circuit boards on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4517.png" src="./assets/images/min/IMG_4517.png" alt="Some circuit boards on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some circuit boards on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4519.png" src="./assets/img/min/IMG_4519.png" alt="Some assorted tools and materials, as well as a toolbox on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4519.png" src="./assets/images/min/IMG_4519.png" alt="Some assorted tools and materials, as well as a toolbox on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some assorted tools and materials, as well as a toolbox on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4523.png" src="./assets/img/min/IMG_4523.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4523.png" src="./assets/images/min/IMG_4523.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some assorted tools and materials on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4524.png" src="./assets/img/min/IMG_4524.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4524.png" src="./assets/images/min/IMG_4524.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some assorted tools and materials on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4525.png" src="./assets/img/min/IMG_4525.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4525.png" src="./assets/images/min/IMG_4525.png" alt="Some assorted tools and materials on a shelf in the makerspace." width="400" height="400">
   <figcaption>Some assorted tools and materials on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4545.png" src="./assets/img/min/IMG_4545.png" alt="A box in the makerspace full of circuit playground express kits." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4545.png" src="./assets/images/min/IMG_4545.png" alt="A box in the makerspace full of circuit playground express kits." width="400" height="400">
   <figcaption>A box in the makerspace full of circuit playground express kits.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4546.png" src="./assets/img/min/IMG_4546.png" alt="A quilting kit on a shelf in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4546.png" src="./assets/images/min/IMG_4546.png" alt="A quilting kit on a shelf in the makerspace." width="400" height="400">
   <figcaption>A quilting kit on a shelf in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4549.png" src="./assets/img/min/IMG_4549.png" alt="A project being worked on in the makerspace." width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4549.png" src="./assets/images/min/IMG_4549.png" alt="A project being worked on in the makerspace." width="400" height="400">
   <figcaption>A project being worked on in the makerspace.</figcaption>
 </figure>
 <figure>
-  <img class="asyncImage" data-src="./assets/img/high/IMG_4550.png" src="./assets/img/min/IMG_4550.png" alt="A project being worked on in the makerspace" width="400" height="400">
+  <img class="asyncImage" data-src="./assets/images/high/IMG_4550.png" src="./assets/images/min/IMG_4550.png" alt="A project being worked on in the makerspace" width="400" height="400">
   <figcaption>A project being worked on in the makerspace.</figcaption>
 </figure>
 </div>
@@ -181,5 +181,6 @@ let lastScrollTop = 0; // Variable to keep track of the last scroll position
       $("#toolbar").css({"width":window.innerWidth});
       $(document.body).css({"width":window.innerWidth});
     </script>
+    <script src="./js/asyncimageload.js"></script>
   </body>
 </html>
